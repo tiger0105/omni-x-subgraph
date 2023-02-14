@@ -1,0 +1,10 @@
+{
+  "network": "mbase",
+  "address": {
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+  },
+  "start_block": {
+    "milady": "28207709"
+  },
+  "file_path": "mbase-advanced-onft-721.ts"
+}
