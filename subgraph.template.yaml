@@ -1,0 +1,83 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: gregs_eth
+    network: {{network}}
+    source:
+      address: "{{address.gregs_eth}}"
+      abi: AdvancedONFT721
+      startBlock: {{start_block.gregs_eth}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+      eventHandlers:
+        - event: ReceiveFromChain(indexed uint16,indexed bytes,indexed address,uint256,uint64)
+          handler: handleReceiveFromChain
+        - event: SendToChain(indexed address,indexed uint16,indexed bytes,uint256,uint64)
+          handler: handleSendToChain
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/{{file_path}}
+  - kind: ethereum
+    name: kanpai_pandas
+    network: {{network}}
+    source:
+      address: "{{address.kanpai_pandas}}"
+      abi: AdvancedONFT721
+      startBlock: {{start_block.kanpai_pandas}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+      eventHandlers:
+        - event: ReceiveFromChain(indexed uint16,indexed bytes,indexed address,uint256,uint64)
+          handler: handleReceiveFromChain
+        - event: SendToChain(indexed address,indexed uint16,indexed bytes,uint256,uint64)
+          handler: handleSendToChain
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/{{file_path}}
+
+  - kind: ethereum
+    name: milady
+    network: {{network}}
+    source:
+      address: "{{address.milady}}"
+      abi: AdvancedONFT721
+      startBlock: {{start_block.milady}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+      eventHandlers:
+        - event: ReceiveFromChain(indexed uint16,indexed bytes,indexed address,uint256,uint64)
+          handler: handleReceiveFromChain
+        - event: SendToChain(indexed address,indexed uint16,indexed bytes,uint256,uint64)
+          handler: handleSendToChain
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/{{file_path}}

@@ -1,0 +1,14 @@
+{
+  "network": "fantom-testnet",
+  "address": {
+    "gregs_eth": "0x5a24731fB8ddB18bF0a6E316B7Bc3Ec08430E2D8",
+    "kanpai_pandas": "0x4946799f0C9934bE1E8113Ba5b84B855A496e820",
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+  },
+  "start_block": {
+    "gregs_eth": "11639964",
+    "kanpai_pandas": "11639964",
+    "milady": "11639964"
+  },
+  "file_path": "fantom-testnet-advanced-onft-721.ts"
+}

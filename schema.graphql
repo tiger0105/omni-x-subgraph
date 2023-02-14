@@ -1,0 +1,67 @@
+type MessageFailed @entity(immutable: true) {
+  id: Bytes!
+  _srcChainId: Int! # uint16
+  _srcAddress: Bytes! # bytes
+  _nonce: BigInt! # uint64
+  _payload: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ReceiveFromChain @entity(immutable: true) {
+  id: Bytes!
+  _srcChainId: Int! # uint16
+  _srcAddress: Bytes! # bytes
+  _toAddress: Bytes! # address
+  _tokenId: BigInt! # uint256
+  _nonce: BigInt! # uint64
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Token @entity {
+  id: ID!
+  token_id: BigInt!
+  col_url: String!
+  contract_type: String!
+  token_uri: String!
+  amount: BigInt!
+  chain_id: BigInt! #int4
+  owner: String! # address
+  collection_address: String! # address
+  updated_at_blocktimestamp: BigInt!
+}
+
+type SendToChain @entity(immutable: true) {
+  id: Bytes!
+  _sender: Bytes! # address
+  _dstChainId: Int! # uint16
+  _toAddress: Bytes! # bytes
+  _tokenId: BigInt! # uint256
+  _nonce: BigInt! # uint64
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetTrustedRemote @entity(immutable: true) {
+  id: Bytes!
+  _srcChainId: Int! # uint16
+  _srcAddress: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Transfer @entity(immutable: true) {
+  id: Bytes!
+  collection: Bytes! # address
+  from: Bytes! # address
+  to: Bytes! # address
+  tokenId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

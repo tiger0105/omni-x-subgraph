@@ -1,0 +1,14 @@
+{
+  "network": "optimism-goerli",
+  "address": {
+    "gregs_eth": "0x907430B24C142785e2cA30af0B71556D041f410A",
+    "kanpai_pandas": "0xFDB6907c2544cA8bC2bF665dEAbAc03242429E28",
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+  },
+  "start_block": {
+    "gregs_eth": "2319564",
+    "kanpai_pandas": "2319564",
+    "milady": "2319564"
+  },
+  "file_path": "optimism-goerli-advanced-onft-721.ts"
+}

@@ -1,0 +1,14 @@
+{
+  "network": "arbitrum-goerli",
+  "address": {
+    "gregs_eth": "0x0c81124c1eDC6bb872864386d746b67da8Acc3F6",
+    "kanpai_pandas": "0xc604ac2341BacDFC44eC7681c287c2b54440A04d",
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+  },
+  "start_block": {
+    "gregs_eth": "514310",
+    "kanpai_pandas": "514310",
+    "milady": "514310"
+  },
+  "file_path": "arbitrum-goerli-advanced-onft-721.ts"
+}

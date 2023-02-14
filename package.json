@@ -1,0 +1,34 @@
+{
+  "name": "omnix-collections",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "prepare:goerli": "mustache config/goerli.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:bsc": "mustache config/chapel.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mumbai": "mustache config/mumbai.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:fuji": "mustache config/fuji.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:fantom-testnet": "mustache config/fantom-testnet.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:arbitrum-goerli": "mustache config/arbitrum-goerli.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:optimism-goerli": "mustache config/optimism-goerli.json subgraph.template.yaml > subgraph.yaml",
+    "deploy": "yarn run prepare:goerli && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections",
+    "deploy:bsc": "yarn run prepare:bsc && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections-bsc",
+    "deploy:mumbai": "yarn run prepare:mumbai && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections-mumbai",
+    "deploy:fuji": "yarn run prepare:fuji && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections-fuji",
+    "deploy:fantom-testnet": "yarn run prepare:fantom-testnet && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections-fantom-tst",
+    "deploy:arbitrum-goerli": "yarn run prepare:arbitrum-goerli && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections-arb-goerli",
+    "deploy:optimism-goerli": "yarn run prepare:optimism-goerli && graph deploy --node https://api.thegraph.com/deploy/ jensoncollins/omnix-collections-opt-goerli",
+    "create-local": "graph create --node http://localhost:8020/ jensoncollins/omnix-collections",
+    "remove-local": "graph remove --node http://localhost:8020/ jensoncollins/omnix-collections",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 jensoncollins/omnix-collections",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.37.6",
+    "@graphprotocol/graph-ts": "0.29.1"
+  },
+  "devDependencies": {
+    "matchstick-as": "0.5.0",
+    "mustache": "^4.2.0"
+  }
+}
