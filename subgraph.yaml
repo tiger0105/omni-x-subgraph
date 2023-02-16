@@ -3,12 +3,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: milady
-    network: mbase
+    name: gregs_eth
+    network: optimism-goerli
     source:
-      address: "0x896CA9931238169186001228ab2D3e060cA21179"
+      address: "0x907430B24C142785e2cA30af0B71556D041f410A"
       abi: AdvancedONFT721
-      startBlock: 28207709
+      startBlock: 2319564
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -27,4 +27,84 @@ dataSources:
           handler: handleSendToChain
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/mbase-advanced-onft-721.ts
+      file: ./src/optimism-goerli-advanced-onft-721.ts
+  - kind: ethereum
+    name: kanpai_pandas
+    network: optimism-goerli
+    source:
+      address: "0xFDB6907c2544cA8bC2bF665dEAbAc03242429E28"
+      abi: AdvancedONFT721
+      startBlock: 2319564
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+      eventHandlers:
+        - event: ReceiveFromChain(indexed uint16,indexed bytes,indexed address,uint256,uint64)
+          handler: handleReceiveFromChain
+        - event: SendToChain(indexed address,indexed uint16,indexed bytes,uint256,uint64)
+          handler: handleSendToChain
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/optimism-goerli-advanced-onft-721.ts
+  - kind: ethereum
+    name: milady
+    network: optimism-goerli
+    source:
+      address: "0x896CA9931238169186001228ab2D3e060cA21179"
+      abi: AdvancedONFT721
+      startBlock: 2319564
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+      eventHandlers:
+        - event: ReceiveFromChain(indexed uint16,indexed bytes,indexed address,uint256,uint64)
+          handler: handleReceiveFromChain
+        - event: SendToChain(indexed address,indexed uint16,indexed bytes,uint256,uint64)
+          handler: handleSendToChain
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/optimism-goerli-advanced-onft-721.ts
+  - kind: ethereum
+    name: omnixexchange
+    network: optimism-goerli
+    source:
+      address: "0x6766e4A6bCAC7FcB8B0Dd584Bfb4C1350Ff8363a"
+      abi: OmniXExchange
+      startBlock: 2319564
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+        - TakerBid
+        - TakerAsk
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+        - name: OmniXExchange
+          file: ./abis/OmniXExchange.json
+      eventHandlers:
+        - event: TakerBid(bytes32,uint256,indexed address,indexed address,indexed address,address,address,uint256,uint256,uint256,uint16,uint16)
+          handler: handleTakerBid
+        - event: TakerAsk(bytes32,uint256,indexed address,indexed address,indexed address,address,address,uint256,uint256,uint256,uint16,uint16)
+          handler: handleTakerAsk
+      file: ./src/optimism-goerli-advanced-onft-721.ts

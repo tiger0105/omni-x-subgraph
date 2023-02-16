@@ -7,10 +7,11 @@ import {
 } from "../generated/AdvancedONFT721/AdvancedONFT721"
 import {
     ReceiveFromChain,
-    SendToChain,
+    SendToChain, TakerAsk, TakerBid,
     Token,
     Transfer
 } from "../generated/schema"
+import {TakerAsk as TakerAskEvent, TakerBid as TakerBidEvent} from "../generated/omnixexchange/OmniXExchange";
 
 export function handleReceiveFromChain(event: ReceiveFromChainEvent): void {
     let entity = new ReceiveFromChain(
@@ -82,6 +83,54 @@ export function handleTransfer(event: TransferEvent): void {
     entity.from = event.params.from
     entity.to = event.params.to
     entity.tokenId = event.params.tokenId
+
+    entity.blockNumber = event.block.number
+    entity.blockTimestamp = event.block.timestamp
+    entity.transactionHash = event.transaction.hash
+
+    entity.save()
+}
+
+export function handleTakerBid(event: TakerBidEvent): void {
+    let entity = new TakerBid(
+        event.transaction.hash.concatI32(event.logIndex.toI32())
+    )
+    entity.orderHash = event.params.orderHash
+    entity.orderNonce = event.params.orderNonce
+    entity.taker = event.params.taker
+    entity.maker = event.params.maker
+    entity.strategy = event.params.strategy
+    entity.currency = event.params.currency
+    entity.collection = event.params.collection
+    entity.tokenId = event.params.tokenId
+    entity.amount = event.params.amount
+    entity.price = event.params.price
+    entity.makerChainId = event.params.makerChainId
+    entity.takerChainId = event.params.takerChainId
+
+    entity.blockNumber = event.block.number
+    entity.blockTimestamp = event.block.timestamp
+    entity.transactionHash = event.transaction.hash
+
+    entity.save()
+}
+
+export function handleTakerAsk(event: TakerAskEvent): void {
+    let entity = new TakerAsk(
+        event.transaction.hash.concatI32(event.logIndex.toI32())
+    )
+    entity.orderHash = event.params.orderHash
+    entity.orderNonce = event.params.orderNonce
+    entity.taker = event.params.taker
+    entity.maker = event.params.maker
+    entity.strategy = event.params.strategy
+    entity.currency = event.params.currency
+    entity.collection = event.params.collection
+    entity.tokenId = event.params.tokenId
+    entity.amount = event.params.amount
+    entity.price = event.params.price
+    entity.makerChainId = event.params.makerChainId
+    entity.takerChainId = event.params.takerChainId
 
     entity.blockNumber = event.block.number
     entity.blockTimestamp = event.block.timestamp

@@ -3,12 +3,14 @@
   "address": {
     "gregs_eth": "0xf6E09641A28A31e45A29CD540A750D2dBA58E88A",
     "kanpai_pandas": "0x4059a86af36Ea79099E40C13e448632a265EFd76",
-    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179",
+    "exchange": "0xa316da7da4702D49C7508cf111A1Dcf23bceE560"
   },
   "start_block": {
     "gregs_eth": "23071302",
     "kanpai_pandas": "23071302",
-    "milady": "23071302"
+    "milady": "23071302",
+    "exchange": "23071302"
   },
   "file_path": "bsc-advanced-onft-721.ts"
 }

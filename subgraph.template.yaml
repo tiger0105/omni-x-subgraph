@@ -54,7 +54,6 @@ dataSources:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
       file: ./src/{{file_path}}
-
   - kind: ethereum
     name: milady
     network: {{network}}
@@ -80,4 +79,32 @@ dataSources:
           handler: handleSendToChain
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
+      file: ./src/{{file_path}}
+  - kind: ethereum
+    name: omnixexchange
+    network: {{network}}
+    source:
+      address: "{{address.exchange}}"
+      abi: OmniXExchange
+      startBlock: {{start_block.exchange}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReceiveFromChain
+        - SendToChain
+        - Transfer
+        - TakerBid
+        - TakerAsk
+      abis:
+        - name: AdvancedONFT721
+          file: ./abis/AdvancedONFT721.json
+        - name: OmniXExchange
+          file: ./abis/OmniXExchange.json
+      eventHandlers:
+        - event: TakerBid(bytes32,uint256,indexed address,indexed address,indexed address,address,address,uint256,uint256,uint256,uint16,uint16)
+          handler: handleTakerBid
+        - event: TakerAsk(bytes32,uint256,indexed address,indexed address,indexed address,address,address,uint256,uint256,uint256,uint16,uint16)
+          handler: handleTakerAsk
       file: ./src/{{file_path}}

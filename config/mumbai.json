@@ -3,12 +3,14 @@
   "address": {
     "gregs_eth": "0xe470095690273485Ed251e7F2246d5561121B6A6",
     "kanpai_pandas": "0x6Db3b03c030451AE66627716e49dE40109E40697",
-    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179",
+    "exchange": "0x2f7754660336C5151A893AeDfA795056f9Cfcf7b"
   },
   "start_block": {
     "gregs_eth": "28207709",
     "kanpai_pandas": "28207709",
-    "milady": "28207709"
+    "milady": "28207709",
+    "exchange": "28207709"
   },
   "file_path": "mumbai-advanced-onft-721.ts"
 }

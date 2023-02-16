@@ -65,3 +65,41 @@ type Transfer @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type TakerBid @entity(immutable: true) {
+  id: Bytes!
+  orderHash: Bytes! # bytes32
+  orderNonce: BigInt! # uint64
+  taker: Bytes! # address
+  maker: Bytes! # address
+  strategy: Bytes! # address
+  currency: Bytes! # address
+  collection: Bytes! # address
+  tokenId: BigInt! # uint256
+  amount: BigInt! # uint256
+  price: BigInt! # uint256
+  makerChainId: Int! # Int
+  takerChainId: Int! # Int
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TakerAsk @entity(immutable: true) {
+  id: Bytes!
+  orderHash: Bytes! # bytes32
+  orderNonce: BigInt! # uint64
+  taker: Bytes! # address
+  maker: Bytes! # address
+  strategy: Bytes! # address
+  currency: Bytes! # address
+  collection: Bytes! # address
+  tokenId: BigInt! # uint256
+  amount: BigInt! # uint256
+  price: BigInt! # uint256
+  makerChainId: Int! # Int
+  takerChainId: Int! # Int
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

@@ -3,12 +3,14 @@
   "address": {
     "gregs_eth": "0x4aA142f1Db95B50dA7ca22267Da557050f9A7Ec9",
     "kanpai_pandas": "0xC4f72e51A84Dcc7f346b3F80699c0e532815EFe6",
-    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179",
+    "exchange": "0xCddaaDBFF15E79Ae87E7DBd86a73750AE0f57c3d"
   },
   "start_block": {
     "gregs_eth": "7629363",
     "kanpai_pandas": "7629363",
-    "milady": "7629363"
+    "milady": "7629363",
+    "exchange": "7629363"
   },
   "file_path": "goerli-advanced-onft-721.ts"
 }

@@ -3,12 +3,14 @@
   "address": {
     "gregs_eth": "0x1bB7a33c2db0e5F39221f83845C441318fBE163F",
     "kanpai_pandas": "0x10De6312D9858a907BD2B972E2843aD85EF6fA89",
-    "milady": "0x896CA9931238169186001228ab2D3e060cA21179"
+    "milady": "0x896CA9931238169186001228ab2D3e060cA21179",
+    "exchange": "0x342840Ec1032B7acbD03a9c408Df351611D4Bf4D"
   },
   "start_block": {
     "gregs_eth": "13725397",
     "kanpai_pandas": "13725397",
-    "milady": "13725397"
+    "milady": "13725397",
+    "exchange": "13725397"
   },
   "file_path": "fuji-advanced-onft-721.ts"
 }
